@@ -138,7 +138,7 @@ class FluidPatternLabHook
         $fileSubpath = ($patternConfiguration['pathName'] ?: $patternConfiguration['path'] . DIRECTORY_SEPARATOR . $patternConfiguration['name']) . '.' . $patternConfiguration['ext'];
         $type = null;
         foreach ($types as $type) {
-            if ($type['name'] === $patternConfiguration['type']) {
+            if (isset($type['name']) && isset($patternConfiguration['type']) && ($type['name'] === $patternConfiguration['type'])) {
                 break;
             }
         }
